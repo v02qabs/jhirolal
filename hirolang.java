@@ -1,5 +1,5 @@
 import java.io.*;
-
+import java.util.*;
 
 class hirolang{
 	public static void main(String[] args){
@@ -12,11 +12,27 @@ class hirolang{
 		System.out.println("fname open");
 		try{
 			File f = new File(fname);
-			if(fname.
+			
 			BufferedReader br = new BufferedReader(new FileReader(f));
 			String line = br.readLine();
 			while(line != null){
-				System.out.println(line + "\n");
+				//System.out.println(line + "\n");
+				try{
+					String[] koubun = { "print", String.valueOf('+')};
+					for(String s : koubun){
+					String[] print_split = line.split(s);
+					for(String a : print_split)
+					{
+						System.out.println("s."  + a);
+					}
+					}
+			
+				}
+				catch(Exception error)
+				{
+					//System.out.println("null");
+				}
+				System.out.println(line);
 				line = br.readLine();
 			}
 		}
@@ -26,3 +42,4 @@ class hirolang{
 	}
 
 }
+
