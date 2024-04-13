@@ -21,10 +21,12 @@ class hirolang{
 					String[] koubun = { "print", String.valueOf('+')};
 					for(String s : koubun){
 					String[] print_split = line.split(s);
-					for(String a : print_split)
-					{
-						System.out.println("s."  + a);
-					}
+					
+					//System.out.println("s2" + print_split[1]);
+						String print_words = print_split[1];
+							String words_s[] = print_words.split("\"");
+							String words_cack = words_s[1];
+							System.out.println("words_s[1] :" + words_cack);
 					}
 			
 				}
@@ -32,7 +34,7 @@ class hirolang{
 				{
 					//System.out.println("null");
 				}
-				System.out.println(line);
+				//System.out.println(line);
 				line = br.readLine();
 			}
 		}
