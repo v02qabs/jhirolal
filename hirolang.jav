@@ -7,7 +7,6 @@ class hirolang{
 		String compileTo_file = args[0];
 		System.out.println("fname = " + compileTo_file);
 		new hirolang().open(compileTo_file);
-		new hirolang().plus_words_read();
 	}
 	private int count = 0;
 	private String print0;
@@ -51,7 +50,7 @@ class hirolang{
 			System.out.println("print3 : " + plus_words);
 			if(plus_words.equals("+")){
 				System.out.println("足し算");
-				write_plus_words(plus_words);
+				set_position(i);
 			}
 
 	}
@@ -62,8 +61,6 @@ class hirolang{
     public boolean isAlpha(String s) {
         return s != null && s.chars().allMatch(Character::isLetter);
     }
-    private int inIn = 0;
-    private int Plus = 0;
 
 	private void equal(String str){
 		try{
@@ -74,42 +71,6 @@ class hirolang{
 		}catch(Exception error){}
 
 	}
-	private void plus_words_read(){
-		try{
-			BufferedReader br = new BufferedReader(new FileReader("./data.txt"));
-	
-			String line = br.readLine();
-			while(line != null){
-				boolean t = line.matches("^[0-9]");
-				if(!t){
-y					break;}
-				else{
-					System.out.println("t: " + t);
-				}
 
-
-
-			}
-		}
-		catch(Exception error){
-				}
-
-	
-	}
-	private void set_num_posistion(int i){
-			System.out.println("i : " + i);
-	}
-
-	private void write_plus_words(String plus_words){
-		try{
-			BufferedWriter bw = new BufferedWriter(new FileWriter("./data.txt", true));
-			bw.write(plus_words);
-			bw.close();
-		}
-		catch(Exception error)
-		{
-			System.out.println("");
-		}
-	}
 
 }
