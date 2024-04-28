@@ -18,6 +18,7 @@ class hirolang{
 			
 			BufferedReader br = new BufferedReader(new FileReader(f));
 			String line = br.readLine();
+<<<<<<< HEAD
 			while(line!=null){
 				String sp[] = line.split("\n");
 				//line変数にすべてのファイルデータを格納する。
@@ -36,6 +37,28 @@ class hirolang{
 						//equal(print2[b]);
 					}
 				}
+=======
+			while(line != null){
+				//System.out.println(line + "\n");
+				try{
+					String[] koubun = { "print", String.valueOf('+')};
+					for(String s : koubun){
+					String[] print_split = line.split(s);
+					
+					//System.out.println("s2" + print_split[1]);
+						String print_words = print_split[1];
+							String words_s[] = print_words.split("\"");
+							String words_cack = words_s[1];
+							System.out.println("words_s[1] :" + words_cack);
+					}
+			
+				}
+				catch(Exception error)
+				{
+					//System.out.println("null");
+				}
+				//System.out.println(line);
+>>>>>>> d9b444ebbf7b822ff6847cc2f376f547befe1767
 				line = br.readLine();
 
 			}
